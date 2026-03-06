@@ -10,3 +10,9 @@ Route::get('/', [HomeController::class, 'index']);
 Route::prefix('dashboard')->group(function () {
     Route::resource('admin/users', AdminUserController::class);
 });
+
+Route::get('/products', [ProductController::class, 'list']);
+
+Route::get('/analytics', function () {
+    return view('analytics');
+});
